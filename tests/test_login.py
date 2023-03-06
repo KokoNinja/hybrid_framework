@@ -4,8 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from assertpy import assert_that
 from selenium.webdriver.common.by import By
 
-class TestLogin:
-
+class WebDriverWrapper:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self):
         serv_driver = Service(executable_path=r"C:\Users\JiDi\Downloads\chromedriver_win32 (5)\chromedriver.exe")
@@ -15,6 +14,8 @@ class TestLogin:
         self.driver.get("https://opensource-demo.orangehrmlive.com/")
         yield
         self.driver.quit()
+
+class TestLogin(WebDriverWrapper):
 
     def test_valid_login(self):
         self.driver.find_element(By.NAME,"username").send_keys("Admin")
@@ -25,17 +26,7 @@ class TestLogin:
 
 
 
-class TestLoginUI:
-
-    @pytest.fixture(scope="function", autouse=True)
-    def setup(self):
-        serv_driver = Service(executable_path=r"C:\Users\JiDi\Downloads\chromedriver_win32 (5)\chromedriver.exe")
-        self.driver = webdriver.Chrome(service=serv_driver)
-        self.driver.maximize_window()
-        self.driver.implicitly_wait(20)
-        self.driver.get("https://opensource-demo.orangehrmlive.com/")
-        yield
-        self.driver.quit()
+class TestLoginUI(WebDriverWrapper):
 
     def test_title(self):
         actual_title = self.driver.title
