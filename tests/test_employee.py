@@ -22,5 +22,3 @@ class TestAddEmployee(WebDriverWrapper):
         actual_first_name = self.driver.find_element(By.NAME, "firstName").get_attribute("value")
         assert_that(expected_profile).is_equal_to(actual_profile_header)
         assert_that(expected_firstname).is_equal_to(actual_first_name)
-
-
