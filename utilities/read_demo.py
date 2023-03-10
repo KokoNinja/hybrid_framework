@@ -19,4 +19,17 @@ print(list)
 
 print(df.values)
 print(df.values.tolist())
+print("-"*100)
+
+""" Read excel and get as data frame"""
+
+df=pandas.read_excel(io="../test_data/orange_test_data.xlsx",sheet_name="test_add_valid_employee")
+print(df)
+print("-"*60)
+print(df.values.tolist())
+print("-"*60)
+print(df.loc[0])
+
+""" to read using column name"""
+
 

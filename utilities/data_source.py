@@ -15,3 +15,6 @@ test_add_valid_employee_data=[
     ]
 
 test_invalid_login_data=read_util.get_csv_as_list("../test_data/test_invalid_login_data.csv")
+
+
+test_add_valid_employee_data=read_util.get_csv_as_list("../test_data/orange_test_data.xlsx")
