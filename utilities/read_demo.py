@@ -11,8 +11,12 @@ print(tuple(df.loc[0]))
 print(df.loc[0].tolist())
 print(df.index)
 
+list=[]
 for i in df.index:
-    print(df.loc[i].tolist())
+    print(tuple(df.loc[i]))
+    list.append(tuple(df.loc[i]))
+print(list)
 
+print(df.values)
 print(df.values.tolist())
 
