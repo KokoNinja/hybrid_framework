@@ -32,4 +32,10 @@ print(df.loc[0])
 
 """ to read using column name"""
 
+print("-"*60)
+print("-"*60)
+print("-"*60)
+print("-"*60)
 
+df =pandas.read_json(path_or_buf="../test_data/data.json")
+print(df)
